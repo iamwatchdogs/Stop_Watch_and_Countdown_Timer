@@ -1,41 +1,72 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" dir="ltr">
 
     <head>
 
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initital-scale=1.0" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="author" content="Shamith" />
-        <meta name="description" content="Stop watch and countdown timer made using vanilla js" />
+        <meta name="author" content="Shamith">
+        <meta name="description" content="Stop watch and countdown timer made using vanilla js">
 
         <!-- Open Graph Protocol -->
         <meta property="og:title" content="Stop watch and countdown timer">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="">
-        <meta property="og:image" content="">
+        <!-- <meta property="og:url" content=""> -->
+        <!-- <meta property="og:image" content=""> -->
 
-        <link rel="stylesheet" href="style.css" type="text/css" />
-
+        <!-- <link rel="icon" href="" type="image/icon-x"> -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
         <title>Stop watch and countdown timer</title>
-
+        
     </head>
-
+    
     <body>
+        <div class="container">
+            <header>
+                <h1>Stop watch and countdown timer</h1>
+            </header>
 
-        <header>
+            <main>
+                <div class="watch-timer">
+                    <h2><a href="#" id="toggle" class="toggle">Stop Watch</a></h2>
+                    <div class="watch-face" id="stopwatch">
+                        <div class="display">
+                            <span class="minute">00</span>
+                            <span class="second">00</span>
+                            <span class="millisecond">00</span>
+                        </div>
+                        <div class="controls">
+                            <button class="start">Start</button>
+                            <button class="pause">Pause</button>
+                            <button class="reset">Reset</button>
+                        </div>
+                    </div>
 
-        </header>
-
-        <main>
-
-        </main>
-
-        <footer>
+                    <div class="watch-face" id="countdown">
+                        <div class="display">
+                            <span class="minute">00</span>
+                            <span class="second">00</span>
+                            <span class="millisecond">00</span>
+                        </div>
+                        <div class="controls">
+                            <button class="start">Start</button>
+                            <button class="set-timer">Set timer</button>
+                            <button class="pause">Pause</button>
+                            <button class="reset">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
             
-        </footer>
-
+            <footer>
+                <p><span class="footer">Made by <a href="https://github.com/iamwatchdogs" title="Goto @iamwatchdogs" target="_blank">Shamith</a></span></p>
+            </footer>
+            
+        </div>
+        <script src="script.js"></script>
     </body>
 
 </html>
