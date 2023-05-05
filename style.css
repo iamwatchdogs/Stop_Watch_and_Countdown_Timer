@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');   /* for clock */
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');         /* for toggle */
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau&display=swap');              /* for title */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-#countdown {
-    display: none;
 }
 body {
     width: 100vw;
@@ -18,6 +19,37 @@ body {
 a {
     text-decoration: none;
 }
+h1,
+footer p {
+    font-family: 'Ysabeau', sans-serif;
+}
+h1 {
+    font-size: 3.5rem;
+}
+main {
+    border: 5px solid whitesmoke;
+    border-radius: 120px;
+}
+button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background-color: #181a1b;
+    color: #e8e6e3;
+    transition: all 0.75s ease-in-out;
+}
+button:hover {
+    background-color: #e8e6e3;
+    color: #181a1b;
+    font-weight: bolder;
+    box-shadow: 1px 1px 25px 5px rgba(128, 128, 128, 0.555);
+}
+footer p {
+    font-size: 1.5rem;
+}
+#countdown {
+    display: none;
+}
 .container {
     width: 75vw;
     height: 75vh;
@@ -28,22 +60,22 @@ a {
 }
 .watch-timer,
 .watch-face {
-    width: 25vw;
+    width: 35vw;
     height: 25vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-main {
-    border: 5px solid whitesmoke;
+    min-width: 600px;
 }
 #toggle {
     position: relative;
-    bottom: 15px;
+    bottom: 1vw;
     color: #e8e6e3;
     background-color: #181a1b;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 250px;
+    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Bruno Ace SC', cursive;
 }
 .display,
 .controls {
@@ -53,4 +85,21 @@ main {
     justify-content: space-around;
     align-items: center;
     padding: 0 75px;
+}
+.display {
+    font-family: 'Major Mono Display', monospace;
+    font-weight: bolder;
+    position: relative;
+    top: 0.5vh;
+}
+.display p {
+    font-size: 1.025rem;
+}
+#toggle,
+.display p span {
+    font-size: 1.5rem;
+}
+#stopwatch, 
+#countdown {
+    transition: all 0.5s ease-in-out;
 }
