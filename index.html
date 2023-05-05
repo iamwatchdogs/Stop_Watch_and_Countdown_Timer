@@ -34,30 +34,30 @@
                     <h2><a href="#" id="toggle" class="toggle" title="toggle between stop watch and countdown timer">Stop Watch</a></h2>
                     <div class="watch-face" id="stopwatch">
                         <div class="display">
-                            <p><span class="hours">00</span>hrs <span>:</span></p>
-                            <p><span class="minute">00</span>min <span>:</span></p>
-                            <p><span class="second">00</span>sec <span>:</span></p>
-                            <p><span class="millisecond">00</span>ms</p>
+                            <p><span class="hours" id="stopwatch-hours">00</span>hrs <span>:</span></p>
+                            <p><span class="minute" id="stopwatch-mins">00</span>min <span>:</span></p>
+                            <p><span class="second" id="stopwatch-sec">00</span>sec <span>:</span></p>
+                            <p><span class="millisecond" id="stopwatch-ms">00</span>ms</p>
                         </div>
                         <div class="controls">
-                            <button class="start">Start</button>
-                            <button class="pause">Pause</button>
-                            <button class="reset">Reset</button>
+                            <button class="start" onclick="startTimer()">Start</button>
+                            <button class="pause" onclick="pauseTimer()">Pause</button>
+                            <button class="reset" onclick="resetTimer()">Reset</button>
                         </div>
                     </div>
                     
                     <div class="watch-face" id="countdown">
                         <div class="display">
-                            <p><span class="hours">00</span>hrs <span>:</span></p>
-                            <p><span class="minute">00</span>min <span>:</span></p>
-                            <p><span class="second">00</span>sec <span>:</span></p>
-                            <p><span class="millisecond">00</span>ms</p>
+                            <p><span class="hours" id="cdtimer-hours">00</span>hrs <span>:</span></p>
+                            <p><span class="minute" id="cdtimer-mins">00</span>min <span>:</span></p>
+                            <p><span class="second" id="cdtimer-sec">00</span>sec <span>:</span></p>
+                            <p><span class="millisecond" id="cdtimer-ms">00</span>ms</p>
                         </div>
                         <div class="controls">
-                            <button class="start">Start</button>
-                            <button class="set-timer">Set timer</button>
-                            <button class="pause">Pause</button>
-                            <button class="reset">Reset</button>
+                            <button class="start" onclick="startTimer()">Start</button>
+                            <button class="set-timer" onclick="setTimer()">Set timer</button>
+                            <button class="pause" onclick="pauseTimer()">Pause</button>
+                            <button class="reset" onclick="resetTimer()">Reset</button>
                         </div>
                     </div>
                 </div>
