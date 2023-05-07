@@ -1,0 +1,238 @@
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');   /* for clock */
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');         /* for toggle */
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau&display=swap');              /* for title */
+
+/* --- Overall CSS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e8e6e3;
+    background-color: #181a1b;
+}
+a {
+    text-decoration: none;
+}
+
+/* --- Header & Footer CSS --- */
+header,
+footer p {
+    font-family: 'Ysabeau', sans-serif;
+    transition: text-shadow 0.75s ease-in-out;
+    text-align: center;
+}
+h1:hover,
+#toggle:hover {
+    text-shadow: 1px 1px 15px rgb(155, 190, 230),0px 1px 5px rgb(191, 221, 255),1px 0px 5px rgb(129, 166, 209);
+    cursor: pointer;
+}
+h1 {
+    font-size: 3.5rem;
+}
+header p {
+    font-size: 1rem;
+    padding-top: 15px;
+    font-style: italic;
+    visibility: hidden;
+    transition: visibility 1s ease-in-out;
+}
+header:hover p {
+    visibility: visible;
+    transition: visibility 1s ease-in-out;
+}
+h1 a {
+    color: #e8e6e3;
+}
+footer p {
+    font-size: 1.5rem;
+}
+footer p:hover a:hover {
+    color: #e8e6e3;
+    text-shadow: 0px 0px 10px rgb(228, 217, 217);
+}
+footer p:active a:active {
+    color: rgb(150, 146, 146);
+}
+footer p a:visited {
+    color: rgb(141, 134, 134);
+}
+
+/* --- Main CSS --- */
+.container {
+    width: 75vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+main {
+    border: 5px solid whitesmoke;
+    border-radius: 120px;
+}
+
+/* --- Clock CSS --- */
+.watch-timer,
+.watch-face {
+    width: 35vw;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 600px;
+}
+#countdown {
+    display: none;
+}
+#toggle {
+    position: relative;
+    bottom: 1vw;
+    color: #e8e6e3;
+    background-color: #181a1b;
+    padding: 10px;
+    border-radius: 250px;
+    font-family: 'Bruno Ace SC', cursive;
+    transition: text-shadow 0.75s ease-in-out;
+}
+.display,
+.controls {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 75px;
+}
+.display {
+    font-family: 'Major Mono Display', monospace;
+    font-weight: bolder;
+    position: relative;
+    top: 0.5vh;
+}
+.display p {
+    font-size: 1.025rem;
+}
+#toggle,
+.display p span {
+    font-size: 1.5rem;
+}
+#stopwatch, 
+#countdown {
+    transition: all 0.5s ease-in-out;
+}
+button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background-color: #181a1b;
+    color: #e8e6e3;
+    border: 2px solid whitesmoke;
+    transition: background-color 0.75s ease-in-out;
+    transition: font-weight 0.75s ease-in-out, border-radius 0.75s ease-in-out, color 0.5s ease-in-out;
+}
+button:hover {
+    background-color: #e8e6e3;
+    color: #181a1b;
+    font-weight: bolder;
+    box-shadow: 1px 1px 25px 5px rgba(128, 128, 128, 0.555);
+}
+
+/* --- Responsiveness --- */
+@media (max-width:625px) and (min-width:395px){
+    .container{
+        width: 90vw;
+        height: 95vh ;
+    }
+    main {
+        border-radius: 25px;
+    }
+    .watch-timer,
+    .watch-face {
+        min-width: 360px;
+        width: 80vw;
+    }
+    #toggle {
+        bottom: 2vh;
+    }
+    .display {
+        width: 100vw;
+    }
+    .display p {
+        font-size: 3vw;
+    }
+    .display p span {
+        font-size: 5vw;
+    }
+}
+@media (max-width:580px) and (min-width:395px){
+    .display p {
+        font-size: 2vw;
+    }
+    .display p span {
+        font-size: 5vw;
+    }
+}
+@media (max-width:395px) and (min-width:200px){
+    h1{
+        font-size: 2em;
+    }
+    .container{
+        width: 95vw;
+        height: 100vh;
+    }
+    main {
+        border-radius: 25px;
+    }
+    .watch-timer,
+    .watch-face {
+        min-width: 200px;
+        width: 80vw;
+        height: 65vh;
+    }
+    #toggle {
+        bottom: 2vh;
+        font-size: 15px;
+        text-align: center;
+    }
+    .display {
+        width: 80vw;
+    }
+    .display p {
+        font-size: 7vw;
+    }
+    .display p span {
+        font-size: 9vw;
+    }
+    .display {
+        flex-direction: column;
+    }
+    .display p .colon{
+        display: none;
+    }
+    .controls {
+        flex-flow: wrap;
+    }
+}
+@media (max-width:200px) {
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container::before {
+        content: 'Can not Display at this viewport';
+    }
+    .container header,
+    .container main,
+    .container footer{
+        display: none;
+    }
+}
