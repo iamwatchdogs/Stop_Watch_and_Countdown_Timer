@@ -76,6 +76,6 @@ After you're done with your changes, you can push them back to your remote repos
 
 <div align="center">
 
-![Output](src/OP.jpg)
+![Output](src/OP.png)
 
 </div>
