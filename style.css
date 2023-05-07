@@ -136,9 +136,7 @@ button {
     color: #e8e6e3;
     border: 2px solid whitesmoke;
     transition: background-color 0.75s ease-in-out;
-    transition: font-weight 0.75s ease-in-out;
-    transition: border-radius 0.75s ease-in-out;
-    transition: color 0.5s ease-in-out;
+    transition: font-weight 0.75s ease-in-out, border-radius 0.75s ease-in-out, color 0.5s ease-in-out;
 }
 button:hover {
     background-color: #e8e6e3;
