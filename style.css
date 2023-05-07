@@ -27,6 +27,7 @@ header,
 footer p {
     font-family: 'Ysabeau', sans-serif;
     transition: text-shadow 0.75s ease-in-out;
+    text-align: center;
 }
 h1:hover,
 #toggle:hover {
@@ -38,7 +39,6 @@ h1 {
 }
 header p {
     font-size: 1rem;
-    text-align: center;
     padding-top: 15px;
     font-style: italic;
     visibility: hidden;
@@ -143,4 +143,96 @@ button:hover {
     color: #181a1b;
     font-weight: bolder;
     box-shadow: 1px 1px 25px 5px rgba(128, 128, 128, 0.555);
+}
+
+/* --- Responsiveness --- */
+@media (max-width:625px) and (min-width:395px){
+    .container{
+        width: 90vw;
+        height: 95vh ;
+    }
+    main {
+        border-radius: 25px;
+    }
+    .watch-timer,
+    .watch-face {
+        min-width: 360px;
+        width: 80vw;
+    }
+    #toggle {
+        bottom: 2vh;
+    }
+    .display {
+        width: 100vw;
+    }
+    .display p {
+        font-size: 3vw;
+    }
+    .display p span {
+        font-size: 5vw;
+    }
+}
+@media (max-width:580px) and (min-width:395px){
+    .display p {
+        font-size: 2vw;
+    }
+    .display p span {
+        font-size: 5vw;
+    }
+}
+@media (max-width:395px) and (min-width:200px){
+    h1{
+        font-size: 2em;
+    }
+    .container{
+        width: 95vw;
+        height: 100vh;
+    }
+    main {
+        border-radius: 25px;
+    }
+    .watch-timer,
+    .watch-face {
+        min-width: 200px;
+        width: 80vw;
+        height: 65vh;
+    }
+    #toggle {
+        bottom: 2vh;
+        font-size: 15px;
+        text-align: center;
+    }
+    .display {
+        width: 80vw;
+    }
+    .display p {
+        font-size: 7vw;
+    }
+    .display p span {
+        font-size: 9vw;
+    }
+    .display {
+        flex-direction: column;
+    }
+    .display p .colon{
+        display: none;
+    }
+    .controls {
+        flex-flow: wrap;
+    }
+}
+@media (max-width:200px) {
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container::before {
+        content: 'Can not Display at this viewport';
+    }
+    .container header,
+    .container main,
+    .container footer{
+        display: none;
+    }
 }
