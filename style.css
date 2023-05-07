@@ -1,7 +1,9 @@
+/* --- Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');   /* for clock */
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');         /* for toggle */
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau&display=swap');              /* for title */
 
+/* --- Overall CSS --- */
 * {
     margin: 0;
     padding: 0;
@@ -19,37 +21,51 @@ body {
 a {
     text-decoration: none;
 }
-h1,
+
+/* --- Header & Footer CSS --- */
+header,
 footer p {
     font-family: 'Ysabeau', sans-serif;
+    transition: text-shadow 0.75s ease-in-out;
+}
+h1:hover,
+#toggle:hover {
+    text-shadow: 1px 1px 15px rgb(155, 190, 230),0px 1px 5px rgb(191, 221, 255),1px 0px 5px rgb(129, 166, 209);
+    cursor: pointer;
 }
 h1 {
     font-size: 3.5rem;
 }
-main {
-    border: 5px solid whitesmoke;
-    border-radius: 120px;
+header p {
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 15px;
+    font-style: italic;
+    visibility: hidden;
+    transition: visibility 1s ease-in-out;
 }
-button {
-    cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 30px;
-    background-color: #181a1b;
+header:hover p {
+    visibility: visible;
+    transition: visibility 1s ease-in-out;
+}
+h1 a {
     color: #e8e6e3;
-    transition: all 0.75s ease-in-out;
-}
-button:hover {
-    background-color: #e8e6e3;
-    color: #181a1b;
-    font-weight: bolder;
-    box-shadow: 1px 1px 25px 5px rgba(128, 128, 128, 0.555);
 }
 footer p {
     font-size: 1.5rem;
 }
-#countdown {
-    display: none;
+footer p:hover a:hover {
+    color: #e8e6e3;
+    text-shadow: 0px 0px 10px rgb(228, 217, 217);
 }
+footer p:active a:active {
+    color: rgb(150, 146, 146);
+}
+footer p a:visited {
+    color: rgb(141, 134, 134);
+}
+
+/* --- Main CSS --- */
 .container {
     width: 75vw;
     height: 75vh;
@@ -58,6 +74,12 @@ footer p {
     justify-content:space-around;
     align-items: center;
 }
+main {
+    border: 5px solid whitesmoke;
+    border-radius: 120px;
+}
+
+/* --- Clock CSS --- */
 .watch-timer,
 .watch-face {
     width: 35vw;
@@ -67,6 +89,9 @@ footer p {
     align-items: center;
     min-width: 600px;
 }
+#countdown {
+    display: none;
+}
 #toggle {
     position: relative;
     bottom: 1vw;
@@ -74,8 +99,8 @@ footer p {
     background-color: #181a1b;
     padding: 10px;
     border-radius: 250px;
-    font-family: 'Rajdhani', sans-serif;
     font-family: 'Bruno Ace SC', cursive;
+    transition: text-shadow 0.75s ease-in-out;
 }
 .display,
 .controls {
@@ -102,4 +127,22 @@ footer p {
 #stopwatch, 
 #countdown {
     transition: all 0.5s ease-in-out;
+}
+button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background-color: #181a1b;
+    color: #e8e6e3;
+    border: 2px solid whitesmoke;
+    transition: background-color 0.75s ease-in-out;
+    transition: font-weight 0.75s ease-in-out;
+    transition: border-radius 0.75s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
+button:hover {
+    background-color: #e8e6e3;
+    color: #181a1b;
+    font-weight: bolder;
+    box-shadow: 1px 1px 25px 5px rgba(128, 128, 128, 0.555);
 }
