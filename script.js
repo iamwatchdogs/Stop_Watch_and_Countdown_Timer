@@ -109,7 +109,7 @@ function pause(forResetOrToggle = false) {
 function startStopWatch() {
     
     // For checking if the timer is already running.
-    if(stopwatchStarted == false){
+    if(hasPausedStopWatch){
         stopwatchStarted =true;
         hasPausedStopWatch = false;
         
