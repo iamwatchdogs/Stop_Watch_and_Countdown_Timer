@@ -10,12 +10,12 @@ let isVisible = 'stopwatch';
 
 toggle.addEventListener('click', function() {
     pause(true);
-    if (stopwatch.style.display === 'none') {
+    if (stopwatch.style.display === 'none') {       //toggled to stopwatch
         stopwatch.style.display = 'block';
         countdown.style.display = 'none';
         toggle.textContent = 'Stop Watch';
         isVisible = 'stopwatch';
-    } else {
+    } else {                                       //toggled to countdown
         stopwatch.style.display = 'none';
         countdown.style.display = 'block';
         toggle.textContent = 'Count Down Timer';
@@ -59,7 +59,7 @@ function writeMilliSecondToDoc(givenMilliSecondTime, writeToDiv) {
     let milliSecond = Math.floor(diffInMs);
     
     // Padding 0 before single digit number.
-    hour = hour.toString().padEnd(2, '0');
+    hour = hour.toString().padStart(2, '0');
     minute = minute.toString().padStart(2, '0');
     second = second.toString().padStart(2, '0');
     milliSecond = milliSecond.toString().padStart(2, '0');
@@ -83,6 +83,7 @@ function writeMilliSecondToDoc(givenMilliSecondTime, writeToDiv) {
 let elapsedTime = 0;
 let hasPausedStopWatch = true;
 let timerIntervalStopWatchId = null;
+let stopwatchStarted = false;
 
 // Function to pause the Stop Watch & Count Down timer.
 function pause(forResetOrToggle = false) {
@@ -92,10 +93,12 @@ function pause(forResetOrToggle = false) {
     else if (isVisible == 'stopwatch') {
         clearInterval(timerIntervalStopWatchId);
         hasPausedStopWatch = true;
+        stopwatchStarted = false;
     } 
     else if (isVisible == 'countdown') {
         clearInterval(timerIntervalCountDownTimerId);
         hasPausedCountDownTimer = true;
+        countDownTimerStarted = false;
     } 
     else {
         alert('Error in `function pause()`');
@@ -106,20 +109,23 @@ function pause(forResetOrToggle = false) {
 function startStopWatch() {
     
     // For checking if the timer is already running.
-    hasPausedStopWatch = false;
-    
-    // Starting time in milliseconds.
-    let startTime = Date.now() - elapsedTime;
-    
-    timerIntervalStopWatchId = setInterval(function() {
+    if(stopwatchStarted == false){
+        stopwatchStarted =true;
+        hasPausedStopWatch = false;
         
-        // Calculating elapsed time in milliseconds.
-        elapsedTime = Date.now() - startTime;
+        // Starting time in milliseconds.
+        let startTime = Date.now() - elapsedTime;
         
-        // Displaying the timer in the HTMl document.
-        writeMilliSecondToDoc(elapsedTime, 'stopwatch');
-        
-    }, 10);
+        timerIntervalStopWatchId = setInterval(function() {
+            
+            // Calculating elapsed time in milliseconds.
+            elapsedTime = Date.now() - startTime;
+            
+            // Displaying the timer in the HTMl document.
+            writeMilliSecondToDoc(elapsedTime, 'stopwatch');
+            
+        }, 10);
+    }
 }
 
 // Function to reset the Stop Watch.
@@ -148,6 +154,7 @@ let isTimerSet = false;
 let milliSecCountDown = 0;
 let timerIntervalCountDownTimerId = null;
 let hasPausedCountDownTimer = false;
+let countDownTimerStarted = false;
 
 // Function to set the Countdown Timer.
 function setCountDownTimer() {
@@ -158,6 +165,8 @@ function setCountDownTimer() {
         milliSecCountDown = min * 60000;
         writeMilliSecondToDoc(milliSecCountDown, 'cdtimer');
         isTimerSet = true;
+        countDownTimerStarted =false;
+        
     }
 }
 
@@ -165,7 +174,9 @@ function setCountDownTimer() {
 function startCountDownTimer() {
     if( !isTimerSet ) {
         alert('Please Set the timer !!!...');
-    } else {
+    } 
+    else if(countDownTimerStarted == false){
+        countDownTimerStarted = true;
         hasPausedCountDownTimer = false;
         timerIntervalCountDownTimerId = timerIntervalStopWatchId = setInterval(function() {
             
