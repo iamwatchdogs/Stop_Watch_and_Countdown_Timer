@@ -83,7 +83,7 @@ function writeMilliSecondToDoc(givenMilliSecondTime, writeToDiv) {
 let elapsedTime = 0;
 let hasPausedStopWatch = true;
 let timerIntervalStopWatchId = null;
-let stopwatchStarted = false;
+
 
 // Function to pause the Stop Watch & Count Down timer.
 function pause(forResetOrToggle = false) {
@@ -93,12 +93,12 @@ function pause(forResetOrToggle = false) {
     else if (isVisible == 'stopwatch') {
         clearInterval(timerIntervalStopWatchId);
         hasPausedStopWatch = true;
-        stopwatchStarted = false;
+
     } 
     else if (isVisible == 'countdown') {
         clearInterval(timerIntervalCountDownTimerId);
         hasPausedCountDownTimer = true;
-        countDownTimerStarted = false;
+        
     } 
     else {
         alert('Error in `function pause()`');
@@ -109,8 +109,8 @@ function pause(forResetOrToggle = false) {
 function startStopWatch() {
     
     // For checking if the timer is already running.
-    if(stopwatchStarted == false){
-        stopwatchStarted =true;
+    if(hasPausedStopWatch){
+        
         hasPausedStopWatch = false;
         
         // Starting time in milliseconds.
@@ -135,11 +135,11 @@ function resetStopWatch() {
     pause(true);
     
     // Resetting the timer in the HTMl document.
-    if (isVisible == 'stopwatch') {
-        writeStopwatch('00', '00', '00', '00');
-    } else {
-        writeCountDown('00', '00', '00', '00');
-    }
+    
+    writeStopwatch('00', '00', '00', '00');
+    
+       
+    
     
     // Resetting the elapsed time.
     elapsedTime = 0;
@@ -153,8 +153,8 @@ function resetStopWatch() {
 let isTimerSet = false;
 let milliSecCountDown = 0;
 let timerIntervalCountDownTimerId = null;
-let hasPausedCountDownTimer = false;
-let countDownTimerStarted = false;
+let hasPausedCountDownTimer = true;
+
 
 // Function to set the Countdown Timer.
 function setCountDownTimer() {
@@ -165,7 +165,7 @@ function setCountDownTimer() {
         milliSecCountDown = min * 60000;
         writeMilliSecondToDoc(milliSecCountDown, 'cdtimer');
         isTimerSet = true;
-        countDownTimerStarted =false;
+        pause(true);
         
     }
 }
@@ -175,10 +175,9 @@ function startCountDownTimer() {
     if( !isTimerSet ) {
         alert('Please Set the timer !!!...');
     } 
-    else if(countDownTimerStarted == false){
-        countDownTimerStarted = true;
+    else if(hasPausedCountDownTimer) {
         hasPausedCountDownTimer = false;
-        timerIntervalCountDownTimerId = timerIntervalStopWatchId = setInterval(function() {
+        timerIntervalCountDownTimerId = setInterval(function() {
             
             // Calculating elapsed time in milliseconds.
             milliSecCountDown = milliSecCountDown-10;
@@ -189,8 +188,6 @@ function startCountDownTimer() {
             // When the timer reaches 0.
             if (milliSecCountDown <= 0) {
                 resetCountDownTimer();
-                hasPausedCountDownTimer = true;
-                isTimerSet = false;
                 alert('Time Up !!!...');
             }
             
