@@ -79,3 +79,11 @@ After you're done with your changes, you can push them back to your remote repos
 ![Output](src/OP.png)
 
 </div>
+
+## Thank you for Contributing
+
+<div align="center">
+  <a href = "https://github.com/iamwatchdogs/Stop_Watch_and_Countdown_Timer/graphs/contributors">
+    <img src = "https://contrib.rocks/image?repo=iamwatchdogs/Stop_Watch_and_Countdown_Timer"/>
+  </a>
+</div>
