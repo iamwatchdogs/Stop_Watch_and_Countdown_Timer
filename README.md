@@ -29,7 +29,7 @@ In the end, I'm thrilled with the result and can't wait to apply the lessons I'v
 
 ## Contribution:
 
-Even though this was a small task of my internship, I think we take take it to next level. If you're a beginner and don't understand what contributing is... then hear me out, Contributing is a process where you wish to work on others' projects to implement your idea *(or)* fix errors to help/support others and improve your practical knowledge in that field. Contributing to an Open-Source such as this mini-project can help you in the long run of your technical journey. You can check [CONTRIBUTION.md](CONTRIBUTION.md "Let's go to CONTRIBUTION.md") for a more practical explanation.
+Even though this was a small task of my internship, I think we take take it to next level. If you're a beginner and don't understand what contributing is... then hear me out, Contributing is a process where you wish to work on others' projects to implement your idea *(or)* fix errors to help/support others and improve your practical knowledge in that field. Contributing to an Open-Source such as this mini-project can help you in the long run of your technical journey. You can check [CONTRIBUTING.md](CONTRIBUTING.md "Let's go to CONTRIBUTING.md") for a more practical explanation.
 
 To contribute to **this** repository, You need to have a good grip on the following skills:
 
@@ -70,7 +70,7 @@ git push origin <branch-name>
 
 After you're done with your changes, you can push them back to your remote repository. So that you can send me a pull request to merge the changes into the original Repository.
 
-> Sounds too Complicated ???... Don't worry, checkout the beginner-friendly guide on how to contribute to this repo on [CONTRIBUTION.md](CONTRIBUTION.md "Let's goto CONTRIBUTION.md")
+> Sounds too Complicated ???... Don't worry, checkout the beginner-friendly guide on how to contribute to this repo on [CONTRIBUTING.md](CONTRIBUTING.md "Let's goto CONTRIBUTING.md")
 
 ## Final Output:
 
