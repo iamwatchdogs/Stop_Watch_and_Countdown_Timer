@@ -1,4 +1,4 @@
-# Contribution:
+# CONTRIBUTING:
 
 Even though this was a small task of my internship with simple JavaScript, I think we take take it to next level. If you wish to contribute to this Repository, It's easy to get started...
 
