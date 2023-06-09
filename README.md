@@ -53,7 +53,7 @@ You can get started by forking this repo and cloning it into your system. Here a
 
 ```bash
 # Clone your forked repo into your local system
-git clone https://github.com/<Your-GitHub-Name>/LoanApprovalPredictionModel_Website.git
+git clone https://github.com/<Your-GitHub-Name>/Stop_Watch_and_Countdown_Timer.git
 
 # Creating a new branch
 git checkout -b <branch-name>
